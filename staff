@@ -1,0 +1,111 @@
+
+/**
+ * Write a description of class staff here.
+ * 
+ * @author (Kate Sukhova) 
+ * @version (a version number or a date)
+ */
+
+ public class Staff  { 
+ 
+  private Object[] list;
+  
+  String forename = null;// instance variables of staff class (foreanme, surname, Id, adress)
+  String surname = null;
+  int userID;
+  String address = null;
+
+public Staff(){
+      this.list = new Object[0];
+    }
+      
+ 
+  public Staff(String forename, String surname, int userID, String address) {
+    this.forename = forename;
+    this.surname = surname;
+    this.userID = userID;
+    this.address = address;
+}
+  
+public void add(Object module) { 
+    Object[] detail = new Object[this.list.length+1];  //adding a module to the staff member
+    for (int i=0; i<this.list.length; i++){
+        detail[i] = this.list[i];
+        detail[this.list.length] = module;
+        this.list = detail;
+    }
+
+}
+
+public boolean remove(Object module){              //removing the module that the staff member lectures on
+    int index  = -1;                          // if the staff member not supposed to lectures on the provided module
+    for(int i=0; i<this.list.length; i++){    //  it should return false
+        if(this.list[i].equals(module)){           // otherwise return true if the module removed successfully 
+            index = i;
+            break;
+        }
+    }
+    return this.remove(index);
+}
+
+ 
+
+class staffCoordinates{
+  private Object[] coordinates;
+
+public staffCoordinates(){
+   this.coordinates = new Object[0];
+        }
+
+    
+public boolean add(Object module){
+        Object[] mcoord = new Object[this.coordinates.length+1];  //adding a module to the staff member, that he coordinates
+    for (int i=0; i<this.coordinates.length; i++){                // if attempted to add similar module return false
+        mcoord[i] = this.coordinates[i];                          // otherwise return true
+        mcoord[this.coordinates.length] = module;
+        this.coordinates = mcoord;
+    }
+    if (this.coordinates[i].equals(module)){
+        i = index;
+        break; 
+    }
+}
+
+public boolean remove(Object module){              //removing the module that the staff member coordinates on
+    int index  = -1;                          // if the staff member not supposed to lectures on the provided module
+    for(int i=0; i<this.coordinates.length; i++){    //  it should return false
+        if(this.coordinates[i].equals(module)){           // otherwise return true if the module removed successfully 
+            index = i;
+            break;
+        }
+    }
+    return this.remove(index);
+}
+
+
+}
+}
+     
+     
+
+
+   
+
+  
+      
+       
+    
+        
+    
+
+    
+
+    
+    
+   
+  
+      
+       
+    
+   
+    
